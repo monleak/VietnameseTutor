@@ -33,6 +33,12 @@ Vite (French word for "quick", pronounced [`/vit/`](https://cdn.jsdelivr.net/gh/
 In addition, Vite is highly extensible via its [Plugin API](https://vitejs.dev/guide/api-plugin.html) and [JavaScript API](https://vitejs.dev/guide/api-javascript.html) with full typing support.
 
 [Read the Docs to Learn More](https://vitejs.dev).
+## How to run 
+- npm install
+
+- npm run dev 
+
+- npm run build
 
 ## Packages
 
