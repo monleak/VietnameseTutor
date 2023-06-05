@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(CourseController::class)->group(function () {
+    Route::get('/course/{id}', 'show');
+    Route::get('/course', 'list');
+    Route::post('/course','create');
+    Route::patch('/course/{id}','update');
+    Route::delete('/course/{id}','destroy');
+});
+
+Route::controller(Teacher::class)->group(function () {
+    Route::get('/teacher/{id}', 'show');
+    Route::get('/teacher', 'list');
+    Route::post('/teacher','create');
+    Route::patch('/teacher/{id}','update');
+    Route::delete('/teacher/{id}','destroy');
 });
