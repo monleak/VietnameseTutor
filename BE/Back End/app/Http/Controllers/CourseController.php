@@ -30,15 +30,11 @@ class CourseController extends Controller
     }
 
     public function create(CreateCourseRequest $request){
-        $course = new Course;
-        $course->name = $request->name;
-        $course->level = $request->level;
-        $course->method = $request->method;
-        $course->description = $request->description ? $request->description : null;
-        $course->price = $request->price;
-        $course->id_teacher = $request->id_teacher;
-        $course->save();
-        return $course;
+        $course = Course::create($request->all());
+        return [
+            "status" => 200,
+            "data" => $course
+        ];
     }
 
     public function update(UpdateCourseRequest $request){
